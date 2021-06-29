@@ -31,7 +31,6 @@ public class CallFragment extends Fragment {
     FragmentCallBinding binding;
     ArrayList<Users> list = new ArrayList<>();
     FirebaseDatabase database;
-//    hkjkj
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
