@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context=".ChatDetailActivity">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/chatRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/linear"
+        android:layout_below="@+id/toolbar"
+        >
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/linear"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/etMessage"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_et_message"
+            android:ems="10"
+            android:fontFamily="@font/poppins"
+            android:hint="Type a message . . ."
+            android:inputType="textPersonName"
+            android:padding="9dp"
+            android:textColor="#474444"
+            android:textColorHint="#878383" />
+
+        <ImageView
+            android:id="@+id/send"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginBottom="4dp"
+            android:src="@drawable/ic_right_arrow"
+            app:tint="@color/chatColor" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+
+        android:minHeight="?attr/actionBarSize">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginRight="16dp">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profile_image"
+                android:layout_width="110dp"
+                android:layout_height="110dp"
+
+                android:src="@drawable/avatar"
+                app:civ_border_color="#D5D0D0"
+                app:civ_border_width="0.5dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/backArrow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.046"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.09"
+                app:srcCompat="@drawable/ic_arrow" />
+
+            <TextView
+                android:id="@+id/userName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/poppins_bold"
+                android:gravity="center"
+                android:text="Group"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/profile_image" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+</RelativeLayout>

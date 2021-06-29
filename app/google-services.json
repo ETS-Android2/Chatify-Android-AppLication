@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "579757706951",
+    "project_id": "neat-roots-vibe",
+    "storage_bucket": "neat-roots-vibe.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:579757706951:android:c5c5a009f965ab431a38e2",
+        "android_client_info": {
+          "package_name": "com.example.vibe"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "579757706951-3uo8dvdaohpue4t70b1vsmuvi2hfs5r9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAid2WM4xPTrVztlfBGRjUMyw-ZLZrWScM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "579757706951-3uo8dvdaohpue4t70b1vsmuvi2hfs5r9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

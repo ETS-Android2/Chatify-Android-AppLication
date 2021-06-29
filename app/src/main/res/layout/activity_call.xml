@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".friendProfile"
+    android:orientation="vertical"
+    >
+
+
+    <ImageView
+        android:id="@+id/backToCallList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_arrow"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="30dp"
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp"
+        >
+
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:padding="10dp"-->
+<!--            android:text="Profile"-->
+<!--            android:textSize="22sp"-->
+<!--            android:fontFamily="@font/poppins_bold"/>-->
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/frndImg"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:padding="10dp"
+            android:src="@drawable/avatar"
+            app:civ_border_color="#D5D0D0"
+            app:civ_border_width="0.5dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_gravity="center"/>
+
+        <TextView
+            android:id="@+id/frndName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="25dp"
+            android:text="Name"
+            android:textSize="18sp"
+            android:fontFamily="@font/poppins_semibold"/>
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:orientation="horizontal"-->
+<!--            android:layout_marginLeft="40dp"-->
+<!--            >-->
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+
+<!--                android:text="About:"-->
+<!--                android:textSize="18sp"-->
+<!--                android:fontFamily="@font/poppins_semibold"-->
+<!--                />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/frndStatus"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginRight="40dp"-->
+<!--                android:layout_marginLeft="5dp"-->
+<!--                android:fontFamily="@font/poppins_semibold"-->
+<!--                android:text="Status"-->
+<!--                android:textSize="18sp" />-->
+<!--        </LinearLayout>-->
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="Contact Number:"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_semibold"
+                />
+            <TextView
+                android:id="@+id/frndNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginLeft="5dp"
+                android:text="Phone Number"
+                android:textSize="18sp"
+                android:fontFamily="@font/poppins_semibold"
+                />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/callFriend"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:padding="10dp"
+            android:text="CALL" />
+    </LinearLayout>
+</LinearLayout>
