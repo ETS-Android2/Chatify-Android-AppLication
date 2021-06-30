@@ -6,15 +6,15 @@
 
 package com.example.vibe;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
-import com.example.vibe.Adapters.chatAdapter;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+
+import com.example.vibe.Adapters.GroupChatAdapter;
 import com.example.vibe.Models.MessagesModel;
 import com.example.vibe.databinding.ActivityGroupChatBinding;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -53,7 +53,7 @@ public class GroupChatActivity extends AppCompatActivity {
         final String senderId = FirebaseAuth.getInstance().getUid();
         binding.userName.setText("Friends Group");
 
-        final chatAdapter adapter = new chatAdapter(messagesModels,this);
+        final GroupChatAdapter adapter = new GroupChatAdapter(messagesModels,this);
         binding.chatRecyclerView.setAdapter(adapter);
 
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
