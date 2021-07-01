@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "579757706951",
+    "firebase_url": "https://neat-roots-vibe-default-rtdb.firebaseio.com",
     "project_id": "neat-roots-vibe",
     "storage_bucket": "neat-roots-vibe.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "579757706951-2i4rh690ua87rod628boss3e6pebb452.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.vibe",
+            "certificate_hash": "c58b51ff9277dada9504df8e78c4412046ede181"
+          }
+        },
         {
           "client_id": "579757706951-3uo8dvdaohpue4t70b1vsmuvi2hfs5r9.apps.googleusercontent.com",
           "client_type": 3

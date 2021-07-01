@@ -6,15 +6,15 @@
 
 package com.example.vibe;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.vibe.Models.Users;
 import com.example.vibe.databinding.ActivitySignUpBinding;
@@ -75,6 +75,10 @@ public class SignUpActivity extends AppCompatActivity {
                     binding.etUserName.setError("Enter username");
                     return;
                 }
+                if(binding.etPhoneNumber.getText().toString().isEmpty()){
+                    binding.etPhoneNumber.setError("Enter your phone number");
+                    return;
+                }
                 if(binding.etEmail.getText().toString().isEmpty()){
                     binding.etEmail.setError("Enter your email");
                     return;
@@ -83,40 +87,48 @@ public class SignUpActivity extends AppCompatActivity {
                     binding.etPassword.setError("Enter your password");
                     return;
                 }
-                if(binding.etPhoneNumber.getText().toString().isEmpty()){
-                    binding.etPhoneNumber.setError("Enter your phone number");
-                    return;
+
+                if(binding.checkBox.isChecked()){
+                    progressDialog.show();
+                    auth.createUserWithEmailAndPassword
+                            (binding.etEmail.getText().toString(),binding.etPassword.getText().toString()).
+                            addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    progressDialog.dismiss();
+
+                                    if(task.isSuccessful()){
+                                        Users user = new Users(binding.etUserName.getText().toString(),
+                                                binding.etEmail.getText().toString(),binding.etPassword.getText().toString(),
+                                                binding.etPhoneNumber.getText().toString()); // add phone number
+
+                                        // getting id of user who signed up
+                                        String id = task.getResult().getUser().getUid();
+
+                                        database.getReference().child("Users").child(id).setValue(user);
+
+                                        Toast.makeText(SignUpActivity.this,"User Created Successfully",Toast.LENGTH_SHORT).show();
+                                    }
+                                    else{
+                                        Toast.makeText(SignUpActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                                    }
+                                }
+                            });
                 }
-
-                progressDialog.show();
-
-                auth.createUserWithEmailAndPassword
-                        (binding.etEmail.getText().toString(),binding.etPassword.getText().toString()).
-                        addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        progressDialog.dismiss();
-
-                        if(task.isSuccessful()){
-                            Users user = new Users(binding.etUserName.getText().toString(),
-                                    binding.etEmail.getText().toString(),binding.etPassword.getText().toString(),
-                                    binding.etPhoneNumber.getText().toString()); // add phone number
-
-                            // getting id of user who signed up
-                            String id = task.getResult().getUser().getUid();
-
-                            database.getReference().child("Users").child(id).setValue(user);
-
-                            Toast.makeText(SignUpActivity.this,"User Created Successfully",Toast.LENGTH_SHORT).show();
-                        }
-                        else{
-                            Toast.makeText(SignUpActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                });
-
+                else {
+                    Toast.makeText(SignUpActivity.this,"Please check terms and conditions",Toast.LENGTH_SHORT).show();
+                }
             }
         });
+        // terms and conditions
+        binding.terms.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent ii = new Intent(SignUpActivity.this,TermsAndConditions.class);
+                startActivity(ii);
+            }
+        });
+
         // on press it takes to signUp page
         binding.tvAlreadyAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -182,7 +194,6 @@ public class SignUpActivity extends AppCompatActivity {
                             users.setUserId(user.getUid());
                             users.setUserName(user.getDisplayName());
                             users.setProfilePic(user.getPhotoUrl().toString());
-                            users.setPhoneNumber(user.getPhoneNumber());// add phone number
 
                             database.getReference().child("Users").child(user.getUid()).setValue(users);
 
@@ -196,7 +207,7 @@ public class SignUpActivity extends AppCompatActivity {
                             // If sign in fails, display a message to the user.
                             Log.w("TAG", "signInWithCredential:failure", task.getException());
                             Toast.makeText(SignUpActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
-
+                            finish();
 //                            updateUI(null);
                         }
                     }
