@@ -21,7 +21,7 @@
         android:id="@+id/imageView3"
         android:layout_width="200dp"
         android:layout_height="200dp"
-        app:srcCompat="@drawable/applogo" />
+        app:srcCompat="@drawable/app" />
 
     <EditText
         android:id="@+id/etUserName"
@@ -83,15 +83,13 @@
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_gravity="left"
-        >
+        android:orientation="horizontal">
 
       <CheckBox
           android:id="@+id/checkBox"
           android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          />
+          android:layout_height="wrap_content" />
 
       <TextView
           android:id="@+id/terms"
@@ -101,8 +99,7 @@
           android:paddingBottom="9dp"
           android:text="Terms and conditions"
           android:textColor="#0000FF"
-          android:textSize="14sp"
-          />
+          android:textSize="14sp" />
 
     </LinearLayout>
 
@@ -127,26 +124,25 @@
           android:id="@+id/btnSignUp"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_weight="1"
           android:padding="15dp"
           android:text="Sign In"
           android:textSize="16sp"
-          android:layout_weight="1"
           app:cornerRadius="10dp" />
 
       <Button
           android:id="@+id/btnGoogle"
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
+          android:layout_marginLeft="6dp"
           android:layout_weight="1"
           android:backgroundTint="#FFFFFF"
           android:drawableLeft="@drawable/ic_search"
-          android:text="Google"
-          android:textSize="16sp"
-          android:textColor="@color/black"
-          app:cornerRadius="10dp"
           android:padding="15dp"
-          android:layout_marginLeft="6dp"
-          />
+          android:text="Google"
+          android:textColor="@color/black"
+          android:textSize="16sp"
+          app:cornerRadius="10dp" />
 
     </LinearLayout>
 

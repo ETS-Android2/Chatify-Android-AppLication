@@ -54,7 +54,7 @@ public class ChatDetailActivity extends AppCompatActivity {
         //
         //
         String phoneNumber = getIntent().getStringExtra("phoneNumber"); // added phone number 13th june
-        String status = getIntent().getStringExtra("status"); // added status on 14th june
+        String status = getIntent().getStringExtra("status");  //added status on 14th june
 
 
         binding.userName.setText(userName);

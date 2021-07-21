@@ -20,7 +20,7 @@
             android:id="@+id/imageView3"
             android:layout_width="200dp"
             android:layout_height="200dp"
-            app:srcCompat="@drawable/applogo" />
+            app:srcCompat="@drawable/app" />
 
         <EditText
             android:id="@+id/etEmail"

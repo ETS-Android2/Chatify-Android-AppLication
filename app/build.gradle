@@ -43,15 +43,20 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.0'
 
     // added core for google sign in
-    implementation 'com.google.firebase:firebase-core:17.0.0'
+
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+//    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
 
     // google sign in
     implementation 'com.google.firebase:firebase-analytics'
 
     // for statuses
-    implementation 'com.github.3llomi:CircularStatusView:V1.0.2'
+//    implementation 'com.github.3llomi:CircularStatusView:V1.0.2'
+
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation 'com.github.OMARIHAMZA:StoryView:1.0.2-alpha'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
     //
 
     //
