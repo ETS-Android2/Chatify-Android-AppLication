@@ -16,30 +16,6 @@ import com.squareup.picasso.Picasso;
 
 import org.jetbrains.annotations.NotNull;
 
-//public class friendProfile extends AppCompatActivity {
-//
-//    ActivityFriendProfileBinding binding;
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        binding = ActivityFriendProfileBinding.inflate(getLayoutInflater());
-//        setContentView(binding.getRoot());
-//
-//        getSupportActionBar().hide();
-//
-//
-//        String friendName = getIntent().getStringExtra("friendName");
-//        String friendPic = getIntent().getStringExtra("friendPic");
-//        String friendNumber = getIntent().getStringExtra("friendNumber");
-//        String friendStatus = getIntent().getStringExtra("friendStatus");
-//
-//        binding.frndNumber.setText(friendNumber);
-//        binding.frndName.setText(friendName);
-//        Picasso.get().load(friendPic).placeholder(R.drawable.avatar).into(binding.frndImg);
-//        binding.frndStatus.setText(friendStatus);
-//    }
-//}
-
 public class friendProfile extends DialogFragment {
 
     TextView frndName,frndStatus,frndNumber;
